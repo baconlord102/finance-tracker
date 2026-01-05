@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Finance Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Personal Finance Tracker</h1>
+        <p>Month-by-month expense tracking</p>
+      </header>
+
+      <div class="month-nav">
+        <button id="prevMonth">&lt;</button>
+        <h2 id="monthName"></h2>
+        <button id="nextMonth">&gt;</button>
+      </div>
+
+      <div class="stats">
+        <div class="card">
+          <p>Start Balance</p>
+          <h3 id="startBalance">$0.00</h3>
+        </div>
+        <div class="card">
+          <p>Income</p>
+          <h3 id="income">$0.00</h3>
+        </div>
+        <div class="card">
+          <p>Expenses</p>
+          <h3 id="expenses">$0.00</h3>
+        </div>
+        <div class="card">
+          <p>End Balance</p>
+          <h3 id="endBalance">$0.00</h3>
+        </div>
+      </div>
+
+      <button id="toggleForm">+ Add Transaction</button>
+
+      <form id="transactionForm" class="hidden">
+        <input type="date" id="date" />
+        <input type="text" id="notes" placeholder="Description" />
+        <input type="number" id="amount" placeholder="Amount" />
+        <select id="type">
+          <option value="debit">Expense</option>
+          <option value="credit">Income</option>
+        </select>
+        <select id="category">
+          <option value="other">Other</option>
+          <option value="food">Food & Dining</option>
+          <option value="transport">Transportation</option>
+          <option value="utilities">Utilities</option>
+          <option value="entertainment">Entertainment</option>
+          <option value="healthcare">Healthcare</option>
+          <option value="income">Income/Payroll</option>
+        </select>
+        <div class="form-actions">
+          <button type="button" id="addTransaction">Add</button>
+          <button type="button" id="cancelForm">Cancel</button>
+        </div>
+      </form>
+
+      <div class="transactions">
+        <h2>Transactions</h2>
+        <ul id="transactionList"></ul>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
